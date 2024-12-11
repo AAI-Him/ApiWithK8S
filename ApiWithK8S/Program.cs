@@ -1,13 +1,17 @@
+using ApiWithK8S.Extensions;
 using ApiWithK8S.Plugins;
 
-Console.WriteLine($"ASPNETCORE_ENVIRONMENT:{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}");
+//Console.WriteLine($"ASPNETCORE_ENVIRONMENT:{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}");
 
-var config = new ConfigMapToAppSettings(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development");
-config.GenerateAppSettingsAsync().Wait();
+//var config = new ConfigMapToAppSettings(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development");
+//config.GenerateAppSettingsAsync().Wait();
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddCommandLine();
 // Add services to the container.
+
+builder.Services.AddSAPClient(option => {
+    option.AppHost = "localhost";
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

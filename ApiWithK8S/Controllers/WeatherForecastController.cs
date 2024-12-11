@@ -1,3 +1,4 @@
+using ApiWithK8S.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiWithK8S.Controllers
@@ -12,10 +13,14 @@ namespace ApiWithK8S.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ISAPClientFactory _sapClientFactory;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(
+            ILogger<WeatherForecastController> logger,
+            ISAPClientFactory sapClientFactory)
         {
             _logger = logger;
+            _sapClientFactory = sapClientFactory;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -25,7 +30,8 @@ namespace ApiWithK8S.Controllers
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                //Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                Summary = _sapClientFactory.AppHost
             })
             .ToArray();
         }
