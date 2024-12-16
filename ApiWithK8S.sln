@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiWithK8S", "ApiWithK8S\Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{99A3AA17-F627-4244-996B-19AFFE924553}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AAISAPClient", "AAISAPClient\AAISAPClient.csproj", "{777C8D48-1068-4B4A-AC7E-469365E08C27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{99A3AA17-F627-4244-996B-19AFFE924553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99A3AA17-F627-4244-996B-19AFFE924553}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99A3AA17-F627-4244-996B-19AFFE924553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{777C8D48-1068-4B4A-AC7E-469365E08C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{777C8D48-1068-4B4A-AC7E-469365E08C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{777C8D48-1068-4B4A-AC7E-469365E08C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{777C8D48-1068-4B4A-AC7E-469365E08C27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

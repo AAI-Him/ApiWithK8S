@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AAISAPTestClient": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
