@@ -20,7 +20,11 @@ namespace ConsoleTest
     {
         // event & delegate test
         delegate void Notify(string message);
+        delegate Func<int, bool> Test();
+
         event Notify ProcessCompleted;
+        event Test OutputFunction;
+
         void Print1(string message) => Console.WriteLine($"Print1:{message}");
         void Print2(string message) => Console.WriteLine($"Print2:{message}");
         void Print3(string message) => Console.WriteLine($"Print3:{message}");
