@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AAISAPClient.SapRfcFunctions.CREATE_COSTPLAN_SQL_V4
 {
-    public sealed class CreateCostPlanSQLV4InputParameters : IBaseSAPInputParameters
+    public sealed class CreateCostPlanSQLV4InputParameter : IBaseSAPInputParameters
     {
         [RfcEntityProperty("Project_ID")]
         public required string ProjectId { get; set; }

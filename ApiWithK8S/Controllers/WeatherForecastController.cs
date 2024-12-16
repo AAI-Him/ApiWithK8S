@@ -15,6 +15,12 @@ namespace ApiWithK8S.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly ISAPClientFactory _sapClientFactory;
 
+        private readonly Lazy<WeatherForecast> _lazyObject = new Lazy<WeatherForecast>(new WeatherForecast
+        {
+            TemperatureC = 1,
+            Summary = "Lazy initialized in WeatherForecastController"
+        });
+
         public WeatherForecastController(
             ILogger<WeatherForecastController> logger,
             ISAPClientFactory sapClientFactory)
@@ -26,14 +32,21 @@ namespace ApiWithK8S.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            if (_lazyObject.IsValueCreated)
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                //Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-                Summary = _sapClientFactory.AppHost
-            })
-            .ToArray();
+                return new[] { _lazyObject.Value };
+            }
+            else
+            {
+                return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+                {
+                    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                    TemperatureC = Random.Shared.Next(-20, 55),
+                    //Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                    Summary = _sapClientFactory.AppHost
+                })
+                .ToArray();
+            }
         }
     }
 }
