@@ -10,11 +10,11 @@ namespace AAISAPClient.SapRfcFunctions.ZFI_RFC_PARTIAL_PAYMENT
 {
     internal class GetRFCPartialPaymentOutputParameter : BaseSAPOutputParameters
     {
-
+        [RfcEntityProperty("OUT_TAB")]
+        public GetRFCPartialPaymentOutputTable[]? outTable { get; set; }
     }
 
-    [RfcEntity("OUT_TAB")]
-    internal class GetRfcPartialPaymentOutputTable : ISapTable
+    public sealed class GetRFCPartialPaymentOutputTable
     {
         [RfcEntityProperty("MANDT")]
         public string? ClientNo { get; set; }

@@ -1,0 +1,408 @@
+
+**** Log file opened at 2024-12-17 09:38:33.984454 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 43532
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 09:38:33.984604 [09428] >> Info entry
+	Did not find config file C:\src\ApiWithK8S\AAISAPClient\sapnwrfc.ini.
+2024-12-17 09:38:55.361120 [09428] >> Error entry
+	[Handle: 2351920524816	ConvID: 	Target: 	SysID: 	SysNr: 	User: 	Codepage: 4103]
+	RfcCommunicationException: Return Value: 20, Code: RFC_COMMUNICATION_FAILURE, Message: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '192.168.1.192:3300' not reached
+TIME        Tue Dec 17 09:38:55 2024
+RELEASE     754
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/754_REL/src/base/ni/nixxi.cpp
+LINE        3458
+DETAIL      NiPConnect2: 192.168.1.192:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+
+**** Log file opened at 2024-12-17 11:49:35.079429 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 35384
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 11:49:35.064099 [46208] >> Error entry
+	[Handle: 1788855508768	ConvID: 	Target: 	SysID: 	SysNr: 	User: 	Codepage: 4103]
+	RfcCommunicationException: Return Value: 20, Code: RFC_COMMUNICATION_FAILURE, Message: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '192.168.1.192:3300' not reached
+TIME        Tue Dec 17 11:49:35 2024
+RELEASE     754
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      D:/depot/bas/754_REL/src/base/ni/nixxi.cpp
+LINE        3458
+DETAIL      NiPConnect2: 192.168.1.192:3300
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     2
+
+
+**** Log file opened at 2024-12-17 14:58:27.730352 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 47568
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 14:58:27.714095 [48432] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED255C210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+
+**** Log file opened at 2024-12-17 15:02:53.528287 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 27148
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 15:02:53.526712 [45420] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED255C210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+
+**** Log file opened at 2024-12-17 15:04:27.672109 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 07332
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 15:04:27.671288 [25776] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED255C210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+
+**** Log file opened at 2024-12-17 15:08:41.609752 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 49852
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 15:08:41.605313 [35672] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED255C210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+
+**** Log file opened at 2024-12-17 16:01:52.001793 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 51804
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 16:01:51.999916 [46180] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED255C210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+2024-12-17 16:01:52.135756 [46180] >> Error entry
+	[Handle: 2516888439920	ConvID: 27351753	Target: SAP03	SysID: CWQ	SysNr: 00	User: CWITUAT	Client: 710	Language: E	Codepage: 4103]
+	RfcSystemException: Key: SAPSQL_IN_ITAB_ILLEGAL_SIGN, Code: RFC_ABAP_RUNTIME_FAILURE, Message: Invalid value in SIGN field of value table for IN itab operator. operator.
+
+**** Log file opened at 2024-12-17 16:03:15.768521 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 19528
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 16:03:15.764795 [19700] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED18CC210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+2024-12-17 16:03:15.895815 [19700] >> Error entry
+	[Handle: 1629981126944	ConvID: 27445709	Target: SAP03	SysID: CWQ	SysNr: 00	User: CWITUAT	Client: 710	Language: E	Codepage: 4103]
+	RfcSystemException: Key: SAPSQL_IN_ITAB_ILLEGAL_OPTION, Code: RFC_ABAP_RUNTIME_FAILURE, Message: Invalid value in OPTION field of value table for IN itab operator. operator.
+
+**** Log file opened at 2024-12-17 16:03:37.793081 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 38344
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 16:03:37.791393 [27116] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED18CC210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+2024-12-17 16:03:37.920787 [27116] >> Error entry
+	[Handle: 2046589611312	ConvID: 27470101	Target: SAP03	SysID: CWQ	SysNr: 00	User: CWITUAT	Client: 710	Language: E	Codepage: 4103]
+	RfcSystemException: Key: SAPSQL_IN_ITAB_ILLEGAL_OPTION, Code: RFC_ABAP_RUNTIME_FAILURE, Message: Invalid value in OPTION field of value table for IN itab operator. operator.
+
+**** Log file opened at 2024-12-17 17:21:59.235574 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 53368
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 17:21:59.233409 [48172] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED25996B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED255C210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+2024-12-17 17:21:59.352510 [48172] >> Error entry
+	[Handle: 1889825990752	ConvID: 31837392	Target: SAP03	SysID: CWQ	SysNr: 00	User: CWITUAT	Client: 710	Language: E	Codepage: 4103]
+	RfcABAPMessageException: Key: Interval 01 does not exist for object ZPS_WBSLOG  , Code: RFC_ABAP_MESSAGE, Message: Interval 01 does not exist for object ZPS_WBSLOG  
+
+**** Log file opened at 2024-12-17 17:32:54.049158 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 27996
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 17:32:54.046573 [38740] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED18CC210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+2024-12-17 17:32:54.204910 [38740] >> Error entry
+	[Handle: 1827546571152	ConvID: 32580456	Target: SAP03	SysID: CWQ	SysNr: 00	User: CWITUAT	Client: 710	Language: E	Codepage: 4103]
+	RfcABAPMessageException: Key: Interval 01 does not exist for object ZPS_WBSLOG  , Code: RFC_ABAP_MESSAGE, Message: Interval 01 does not exist for object ZPS_WBSLOG  
+
+**** Log file opened at 2024-12-17 17:36:05.620351 UTC+08:00 (China Standard Time), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\src\ApiWithK8S\AAISAPClient
+Program                   : AAISAPClient
+Process ID                : 19424
+User                      : chan.shinghim
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 191 Step 2)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : PC5698
+IP address                : 192.168.0.39
+IPv6 address              : fe80::3de2:3d79:b422:70e5
+Global trace level        : 0
+
+2024-12-17 17:36:05.613712 [44008] >> Info entry
+	throwRfcErrorMsg called at:
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED19096B0: sapnwrfc.DLL!RfcSetAbapObjectByIndex(Error in SymSetContext(): 50)
+	0x7FFED18CC210: sapnwrfc.DLL!RfcInvoke(Error in SymSetContext(): 50)
+???
+2024-12-17 17:36:05.764906 [44008] >> Error entry
+	[Handle: 2394484597424	ConvID: 32788999	Target: SAP03	SysID: CWQ	SysNr: 00	User: CWITUAT	Client: 710	Language: E	Codepage: 4103]
+	RfcABAPMessageException: Key: Interval 01 does not exist for object ZPS_WBSLOG  , Code: RFC_ABAP_MESSAGE, Message: Interval 01 does not exist for object ZPS_WBSLOG  

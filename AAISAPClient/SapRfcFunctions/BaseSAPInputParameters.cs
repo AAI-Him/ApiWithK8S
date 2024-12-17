@@ -10,10 +10,5 @@ namespace AAISAPClient.SapRfcFunctions
 {
     internal interface IBaseSAPInputParameters : IRfcInput
     {
-        [RfcEntityProperty("SAP_USER_ID")]
-        public string SAPUserId { get; set; }
-
-        [RfcEntityProperty("SAP_Key")]
-        public string SAPKey { get; set; }
     }
 }

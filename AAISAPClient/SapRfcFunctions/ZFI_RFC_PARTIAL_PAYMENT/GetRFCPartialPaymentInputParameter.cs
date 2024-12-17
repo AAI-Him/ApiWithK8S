@@ -10,24 +10,23 @@ namespace AAISAPClient.SapRfcFunctions.ZFI_RFC_PARTIAL_PAYMENT
 {
     internal class GetRFCPartialPaymentInputParameter : IBaseSAPInputParameters
     {
-        public required string SAPUserId { get; set; }
-        public required string SAPKey { get; set; }
-        [RfcEntityProperty("KTOKK")]
-        public required GetRFCPartialPaymentInputTable AccountGroup {  get; set; }
+        [RfcEntityProperty("S_KTOKK")]
+        public GetRFCPartialPaymentInputTable[] SKtokk { get; set; }
         [RfcEntityProperty("P_DATE")]
         // Format: yyyyMMdd
         public required string CutOffDate { get; set; }
 
     }
-
-    [RfcEntity("KTOKK")]
-    internal class GetRFCPartialPaymentInputTable : ISapTable
+    
+    internal class GetRFCPartialPaymentInputTable
     {
-        [RfcEntityProperty("S_KTOKK")]
-        // Z21 - Subcontractor
-        // Z22 - Supplier Materials
-        // Z23 - Supplier Plants Hiring
-        // Z24 - Other Utilities
-        public required string AccountType { get; set; }
+        [RfcEntityProperty("SIGN")]
+        public required string SIGN { get; set; }
+        [RfcEntityProperty("OPTION")]
+        public required string OPTION { get; set; }
+        [RfcEntityProperty("LOW")]
+        public required string LOW { get; set; }
+        [RfcEntityProperty("HIGH")]
+        public required string HIGH { get; set; }
     }
 }

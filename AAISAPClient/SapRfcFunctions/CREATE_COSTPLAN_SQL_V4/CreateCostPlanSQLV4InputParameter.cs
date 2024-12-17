@@ -10,11 +10,31 @@ namespace AAISAPClient.SapRfcFunctions.CREATE_COSTPLAN_SQL_V4
 {
     public sealed class CreateCostPlanSQLV4InputParameter : IBaseSAPInputParameters
     {
-        [RfcEntityProperty("Project_ID")]
+        [RfcEntityProperty("PROJECT_ID")]
         public required string ProjectId { get; set; }
-        [RfcEntityProperty("Project_Desc")]
+        [RfcEntityProperty("PROJECT_DESC")]
         public required string Description { get; set; }
-        public required string SAPUserId { get; set; }
-        public required string SAPKey { get; set; }
+        [RfcEntityProperty("IN_TAB")]
+        public CreateCostPlanSQLV4InputTable[]? InTable { get; set; }
+    }
+    
+    public sealed class CreateCostPlanSQLV4InputTable
+    {
+        [RfcEntityProperty("PROJECT_ID")]
+        public required string ProjectId { get; set; }
+        [RfcEntityProperty("COMP_CDE")]
+        public required string CompanyCode { get; set; }
+        [RfcEntityProperty("COST_CENTER")]
+        public required string CostCenter { get; set; }
+        [RfcEntityProperty("PROJECT_SDTE")]
+        public required string ProjectStartDate { get; set; }
+        [RfcEntityProperty("PROJECT_EDTE")]
+        public required string ProjectEndDate { get; set; }
+        [RfcEntityProperty("COST_CDE")]
+        public required string CostCode { get; set; }
+        [RfcEntityProperty("CODE_DESC")]
+        public required string CodeDescription { get; set; }
+        [RfcEntityProperty("MFR_ITEM_NO")]
+        public required string MFRItemNo { get; set; }
     }
 }

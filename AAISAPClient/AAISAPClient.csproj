@@ -13,4 +13,23 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     <PackageReference Include="sapco2" Version="1.2.0.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="lib\icudt57.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="lib\icuin57.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="lib\icuuc57.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="lib\sapnwrfc.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo $(OutDir)&#xD;&#xA;echo $(ProjectDir)&#xD;&#xA;COPY $(ProjectDir)\lib\*.dll $(ProjectDir)\$(OutDir)\" />
+  </Target>
 </Project>
