@@ -1,5 +1,4 @@
-﻿using SapCo2.Abstract;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace AAISAPClient.SapRfcFunctions
 {
-    public class CreateCostPlanSQLV4(IRfcClient client)
+    public partial class AAISAPServiceClient : IAAISAPServiceClient
     {
-        public async Task<List<CreateCostPlanSQLV4OutputTable>?> ExecuteAsync(
+        #region ZRFC135_CREATE_COSTPLAN_V4
+        public async Task<List<CreateCostPlanSQLV4OutputTable>?> CreateCostPlanAsync(
             string projectId,
             string projectDescription,
             List<CreateCostPlanSQLV4InputTable> costplanitems)
@@ -44,5 +44,6 @@ namespace AAISAPClient.SapRfcFunctions
             Console.WriteLine($"ZRFC135_CREATE_COSTPLAN_V4 executed, retrieved record: {result?.outTable?.Length}");
             return result?.outTable?.ToList();
         }
+        #endregion
     }
 }

@@ -7,9 +7,28 @@ using System.Threading.Tasks;
 
 namespace AAISAPClient.SapRfcFunctions
 {
-    public class GetRFCPartialPayment(IRfcClient client)
+    public interface IAAISAPServiceClient : IDisposable
     {
-        public async Task<List<GetRFCPartialPaymentOutputTable>?> ExecuteAsync(DateTime cutoffDate)
+        Task<List<GetRFCPartialPaymentOutputTable>?> GetRFCPartialPaymentAsync(DateTime cutoffDate);
+        Task<List<CreateCostPlanSQLV4OutputTable>?> CreateCostPlanAsync(
+           string projectId,
+           string projectDescription,
+           List<CreateCostPlanSQLV4InputTable> costplanitems);
+    }
+    
+    public partial class AAISAPServiceClient(IRfcClient client) : IAAISAPServiceClient
+    {
+        private bool _disposed = false;
+        public void Dispose()
+        {
+            if (!_disposed)
+            {
+                client.Dispose();
+            }
+        }
+
+        #region ZFI_RFC_PARTIAL_PAYMENT
+        public async Task<List<GetRFCPartialPaymentOutputTable>?> GetRFCPartialPaymentAsync(DateTime cutoffDate)
         {
             var inputParameters = new GetRFCPartialPaymentInputParameter()
             {
@@ -18,7 +37,6 @@ namespace AAISAPClient.SapRfcFunctions
                         SIGN = "I",
                         OPTION = "EQ",
                         LOW = cutoffDate.ToString("yyyyMMdd"),
-                        //LOW = "20240927",
                         HIGH = ""
                     }
                 },
@@ -34,5 +52,6 @@ namespace AAISAPClient.SapRfcFunctions
             Console.WriteLine($"ZFI_RFC_PARTIAL_PAYMENT executed, retrieved record: {result.outTable.Length}");
             return result?.outTable?.ToList();
         }
+        #endregion
     }
 }

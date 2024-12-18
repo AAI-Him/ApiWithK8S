@@ -11,7 +11,7 @@ namespace AAISAPClient.SapRfcFunctions
     internal class GetRFCPartialPaymentInputParameter : IBaseSAPInputParameters
     {
         [RfcEntityProperty("S_KTOKK")]
-        public GetRFCPartialPaymentInputTable[] SKtokk { get; set; }
+        public GetRFCPartialPaymentInputTable[]? SKtokk { get; set; }
         [RfcEntityProperty("P_DATE")]
         // Format: yyyyMMdd
         public required string CutOffDate { get; set; }

@@ -1,4 +1,5 @@
 using AAISAPClient;
+using AAISAPClient.SapRfcFunctions;
 using Amazon.Runtime;
 using Amazon.SQS;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +21,9 @@ var credential = new AmazonSQSClient("test", "test", "token", sqsConfig);
 var builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddSingleton<IAmazonSQS, AmazonSQSClient>();
 builder.Services.AddSapCo2(s => s.ReadFromConfiguration(builder.Configuration));
-builder.Services.AddHostedService<Worker>();
+builder.Services.AddScoped<IAAISAPServiceClient, AAISAPServiceClient>();
+builder.Services.AddHostedService<GetRFCPartialPaymentWorker>();
+builder.Services.AddHostedService<CreateCostPlanWorker>();
 
 var host = builder.Build();
 host.Run();

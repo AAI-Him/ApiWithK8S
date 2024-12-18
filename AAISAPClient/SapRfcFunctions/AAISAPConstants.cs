@@ -20,16 +20,11 @@ namespace AAISAPClient.SapRfcFunctions
         public int MaxRetryCount { get; set; }
     }
 
-    public interface IAAIEventMessage
-    { 
-        string RfcType { get; set; }
-        string Message { get; set; }
-    }
-
-    public class CreateCostPlanEventMessage : IAAIEventMessage
+    public class AWSSQSChannelOption
     {
-        public required string RfcType { get; set; }
-        public required string Message { get; set; }
-
+        public required string QueueUrl { get; set; }
+        public required string DLQueueUrl { get; set; }
+        public int MaxRetryCount { get; set; }
+        public int MaxNumberOfMessages { get; set; }
     }
 }
