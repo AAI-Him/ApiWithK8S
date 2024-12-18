@@ -1,12 +1,11 @@
-﻿using AAISAPClient.SapRfcFunctions.ZFI_RFC_PARTIAL_PAYMENT;
-using SapCo2.Abstraction.Attributes;
+﻿using SapCo2.Abstraction.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AAISAPClient.SapRfcFunctions.CREATE_COSTPLAN_SQL_V4
+namespace AAISAPClient.SapRfcFunctions
 {
     internal class CreateCostPlanSQLV4OutputParameter : BaseSAPOutputParameters
     {

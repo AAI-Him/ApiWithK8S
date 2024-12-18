@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AAISAPClient.SapRfcFunctions.CREATE_COSTPLAN_SQL_V4
+namespace AAISAPClient.SapRfcFunctions
 {
     public sealed class CreateCostPlanSQLV4InputParameter : IBaseSAPInputParameters
     {

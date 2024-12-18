@@ -1,13 +1,22 @@
 using AAISAPClient.SapRfcFunctions;
-using AAISAPClient.SapRfcFunctions.CREATE_COSTPLAN_SQL_V4;
-using AAISAPClient.SapRfcFunctions.ZFI_RFC_PARTIAL_PAYMENT;
+using Amazon.SQS;
+using Amazon.SQS.Model;
+using Newtonsoft.Json;
 using SapCo2.Abstract;
+using System.Collections.Concurrent;
+using System.Text.Json.Serialization;
 
 namespace AAISAPClient
 {
-    public class Worker(ILogger<Worker> logger, IServiceProvider serviceProvider) 
+    public class Worker(ILogger<Worker> logger, IServiceProvider serviceProvider, IAmazonSQS sqsClient) 
         : BackgroundService
     {
+        private string _QueueUrl = "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/smartzone-queue";
+        private string _DLQueueUrl = "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/smartzone-dlq";
+        private int _MaxRetryCount = 3;
+
+        private Dictionary<string, int> _RetryMessage = new Dictionary<string, int>();
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
@@ -17,70 +26,92 @@ namespace AAISAPClient
                     logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 }
 
-                try
+                while (true)
                 {
-                    using (IRfcClient client = serviceProvider.GetRequiredService<IRfcClient>())
+                    try
                     {
-                        #region ZFI_RFC_PARTIAL_PAYMENT
-                        //var inputParameters = new GetRFCPartialPaymentInputParameter()
-                        //{
-                        //    SKtokk = new GetRFCPartialPaymentInputTable[] {
-                        //        new GetRFCPartialPaymentInputTable{
-                        //            SIGN = "I",
-                        //            OPTION = "EQ",
-                        //            LOW = "20240927",
-                        //            HIGH = ""
-                        //        }
-                        //    },
-                        //    CutOffDate = "20240927",
-                        //};
-
-                        //var result = await client.ExecuteRfcAsync<GetRFCPartialPaymentInputParameter, GetRFCPartialPaymentOutputParameter>(AAISAPConstants.ZFI_RFC_PARTIAL_PAYMENT, inputParameters);
-
-                        //foreach (var item in result.outTable)
-                        //{
-                        //    Console.WriteLine(string.Join(",", item.ClientNo, item.VendorCode, item.VendorName, item.MMInvoiceNo, item.MMInvoiceNo, item.InvoiceDocumentYear, item.CompanyCode, item.ClearingDocumentNo, item.ClearingDocumentYear, item.Currency, item.PaymentAmountDocumentCurrency, item.PaymentAmountHKD));
-                        //}
-                        //Console.WriteLine($"ZFI_RFC_PARTIAL_PAYMENT executed, retrieved record: {result.outTable.Length}");
-                        #endregion
-
-                        #region CREATE_COSTPLAN_SQL_V4
-
-                        var costCodes = new List<CreateCostPlanSQLV4InputTable>();
-                        for (int i = 0; i < 1; i++)
+                        var receiveMessageRequest = new ReceiveMessageRequest
                         {
-                            costCodes.Add(new CreateCostPlanSQLV4InputTable
-                            {
-                                //Client = "700",
-                                ProjectId = "1095",
-                                CompanyCode = "D007",
-                                CostCenter = "PROJ1095",
-                                ProjectStartDate = "20231115",
-                                ProjectEndDate = "20240528",
-                                CostCode = "0",
-                                CodeDescription = "Area 0 (m)",
-                                MFRItemNo = "",
-                            });
-                        }
-
-                        var inputParameters = new CreateCostPlanSQLV4InputParameter()
-                        {
-                            //Client = "700",
-                            ProjectId = "1095",
-                            Description = "Fitting-Out Works for 2/F Medical Center at 21 Ashley Road".Substring(0, 40),
-                            InTable = costCodes.ToArray()
+                            QueueUrl = _QueueUrl,
+                            MaxNumberOfMessages = 1,
+                            WaitTimeSeconds = 5000,
+                            MessageAttributeNames = new List<string> { "All" }
                         };
 
-                        var result = await client.ExecuteRfcAsync<CreateCostPlanSQLV4InputParameter, CreateCostPlanSQLV4OutputParameter>(AAISAPConstants.ZRFC135_CREATE_COSTPLAN_V4, inputParameters);
-                        Console.WriteLine($"ZRFC135_CREATE_COSTPLAN_V4 executed, retrieved record: {result?.outTable?.Length}");
-                        #endregion
+                        var receiveMessageResponse = await sqsClient.ReceiveMessageAsync(receiveMessageRequest);
+
+                        if (receiveMessageResponse.Messages.Count > 0)
+                        {
+                            foreach (var message in receiveMessageResponse.Messages)
+                            {
+                                // TODO: define action to SAP
+                                Console.WriteLine($"Deserialized messgae: {JsonConvert.SerializeObject(message)}");
+
+                                bool retval = await ProcessMessage(message);
+
+                                if (retval)
+                                {
+                                    await DeleteMessage(message.ReceiptHandle);
+                                    Console.WriteLine($"{message.ReceiptHandle} has been removed from queue.");
+                                }
+                                else
+                                {
+                                    if (!_RetryMessage.ContainsKey(message.MessageId))
+                                    {
+                                        _RetryMessage.Add(message.MessageId, 0);
+                                    }
+
+                                    if (_RetryMessage.TryGetValue(message.MessageId, out int retryCount) && retryCount < _MaxRetryCount)
+                                    {
+                                        // retry same message payload for retry count < 3
+                                        _RetryMessage[message.MessageId]++;
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                        // move to DLQ and dequeue
+                                        await sqsClient.SendMessageAsync(_DLQueueUrl, message.Body);
+                                        await DeleteMessage(message.ReceiptHandle);
+                                    }
+                                }
+                            }
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        await Task.Delay(50000, stoppingToken);
+                    }
+                    await Task.Delay(5000, stoppingToken);
                 }
-                catch (Exception ex)
+            }
+        }
+
+        private async Task<bool> ProcessMessage(Message message)
+        {
+            //using (IRfcClient client = serviceProvider.GetRequiredService<IRfcClient>())
+            //{
+
+            //}
+            await Task.Run(() => Console.WriteLine("Hello world") );
+            return false;
+        }
+
+        private async Task DeleteMessage(string receiptHandle)
+        {
+            try
+            {
+                var deleteMessageRequest = new DeleteMessageRequest
                 {
-                    await Task.Delay(50000, stoppingToken);
-                }
-                await Task.Delay(5000, stoppingToken);
+                    QueueUrl = _QueueUrl,
+                    ReceiptHandle = receiptHandle
+                };
+
+                await sqsClient.DeleteMessageAsync(deleteMessageRequest);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting message: {ex.Message}");
+                throw;
             }
         }
     }

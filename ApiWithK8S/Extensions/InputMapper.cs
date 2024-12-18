@@ -5,14 +5,14 @@ namespace ApiWithK8S.Extensions
 {
     public class InputMapper
     {
-        public static Expression BuildApplyForProperty(
-            PropertyInfo propertyInfo,
-            Expression interopParameter,
-            Expression dateHandleParameter,
-            Expression inputParameter
-            )
-        {
-            if (Attribute.IsDefined(propertyInfo))
-        }
+        //public static Expression BuildApplyForProperty(
+        //    PropertyInfo propertyInfo,
+        //    Expression interopParameter,
+        //    Expression dateHandleParameter,
+        //    Expression inputParameter
+        //    )
+        //{
+        //    if (Attribute.IsDefined(propertyInfo))
+        //}
     }
 }

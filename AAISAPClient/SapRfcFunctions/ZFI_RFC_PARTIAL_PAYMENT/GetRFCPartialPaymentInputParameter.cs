@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AAISAPClient.SapRfcFunctions.ZFI_RFC_PARTIAL_PAYMENT
+namespace AAISAPClient.SapRfcFunctions
 {
     internal class GetRFCPartialPaymentInputParameter : IBaseSAPInputParameters
     {
